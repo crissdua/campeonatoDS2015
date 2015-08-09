@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55E46DBA-F950-412F-B148-EC3C04533D38}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>campeonato</RootNamespace>
+    <AssemblyName>campeonato</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="csNotificaciones, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\csNotificaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="campeonatoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>campeonatoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConsInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsInscripcion.Designer.cs">
+      <DependentUpon>ConsInscripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscJugador.Designer.cs">
+      <DependentUpon>InscJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nuevocampeonato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nuevocampeonato.Designer.cs">
+      <DependentUpon>nuevocampeonato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlogin.Designer.cs">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menuprincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menuprincipal.Designer.cs">
+      <DependentUpon>menuprincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nuevoempleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nuevoempleado.Designer.cs">
+      <DependentUpon>nuevoempleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nuevoequipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nuevoequipo.Designer.cs">
+      <DependentUpon>nuevoequipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoJugador.Designer.cs">
+      <DependentUpon>NuevoJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoPartido.Designer.cs">
+      <DependentUpon>NuevoPartido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmrecContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmrecContrasena.Designer.cs">
+      <DependentUpon>frmrecContrasena.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConsInscripcion.resx">
+      <DependentUpon>ConsInscripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscJugador.resx">
+      <DependentUpon>InscJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nuevocampeonato.resx">
+      <DependentUpon>nuevocampeonato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlogin.resx">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menuprincipal.resx">
+      <DependentUpon>menuprincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nuevoempleado.resx">
+      <DependentUpon>nuevoempleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nuevoequipo.resx">
+      <DependentUpon>nuevoequipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoJugador.resx">
+      <DependentUpon>NuevoJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoPartido.resx">
+      <DependentUpon>NuevoPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmrecContrasena.resx">
+      <DependentUpon>frmrecContrasena.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="campeonatoDataSet.xsc">
+      <DependentUpon>campeonatoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="campeonatoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>campeonatoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="campeonatoDataSet.xss">
+      <DependentUpon>campeonatoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\loggin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\manual usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\manual usuario_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\agregar usuario.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\eliminar usuario.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\1438214296_010.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\1438223589_our_process_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\8D349982F.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\campos_de_futbol_con_una_pelota-1280x800.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\fondo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\fondo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\icons\fondo4.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

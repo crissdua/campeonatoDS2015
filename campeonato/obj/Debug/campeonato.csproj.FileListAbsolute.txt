@@ -1,0 +1,51 @@
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\bin\Debug\campeonato.exe.config
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\bin\Debug\campeonato.exe
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\bin\Debug\campeonato.pdb
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.csprojResolveAssemblyReference.cache
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.login.resources
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.Properties.Resources.resources
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.csproj.GenerateResource.Cache
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.exe
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.pdb
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.menuprincipal.resources
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.nuevoempleado.resources
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.nuevocampeonato.resources
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.nuevoequipo.resources
+c:\users\enrique\documents\visual studio 2013\Projects\campeonato\campeonato\obj\Debug\campeonato.NuevoJugador.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\bin\Debug\campeonato.exe.config
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\bin\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\bin\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.csprojResolveAssemblyReference.cache
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.nuevocampeonato.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.login.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.menuprincipal.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.nuevoempleado.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.nuevoequipo.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.NuevoJugador.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.Properties.Resources.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.csproj.GenerateResource.Cache
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.ConsInscripcion.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.InscJugador.resources
+C:\Users\Cristhiam\Desktop\campeonato\campeonato\obj\Debug\campeonato.NuevoPartido.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\bin\Debug\campeonato.exe.config
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\bin\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\bin\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\bin\Debug\csNotificaciones.dll
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\bin\Debug\MySql.Data.dll
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.csprojResolveAssemblyReference.cache
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.ConsInscripcion.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.InscJugador.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.nuevocampeonato.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.menuprincipal.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.nuevoempleado.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.nuevoequipo.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.NuevoJugador.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.NuevoPartido.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.Properties.Resources.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.csproj.GenerateResource.Cache
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.frmlogin.resources
+C:\Users\Cristhiam\Desktop\Dis.  Sistemas\campeonato\campeonato\obj\Debug\campeonato.frmreccontrasena.resources
