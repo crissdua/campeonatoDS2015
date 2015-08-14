@@ -121,8 +121,8 @@
   <data name="manual usuario_opt2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\icons\manual usuario_opt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1438223589_our_process_22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\icons\1438223589_our_process_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminar usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\icons\eliminar usuario.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\icons\fondo4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,6 +135,9 @@
   </data>
   <data name="1438214296_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\icons\1438214296_010.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1438223589_our_process_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\icons\1438223589_our_process_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nuevo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\icons\nuevo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +160,7 @@
   <data name="loggin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\icons\loggin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1438223589_our_process_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="1438223589_our_process_22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\icons\1438223589_our_process_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manual usuario_opt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -178,7 +181,7 @@
   <data name="nuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\icons\nuevo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminar usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\icons\eliminar usuario.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

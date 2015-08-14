@@ -32,13 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="csNotificaciones, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\csNotificaciones.dll</HintPath>
+    <Reference Include="csNotificaciones">
+      <HintPath>Service References\csNotificaciones.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,28 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="campeonatoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>campeonatoDataSet.xsd</DependentUpon>
+    <Compile Include="frmCategorias.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conexion.cs" />
     <Compile Include="ConsInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsInscripcion.Designer.cs">
       <DependentUpon>ConsInscripcion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InscJugador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InscJugador.Designer.cs">
-      <DependentUpon>InscJugador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nuevocampeonato.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nuevocampeonato.Designer.cs">
-      <DependentUpon>nuevocampeonato.cs</DependentUpon>
     </Compile>
     <Compile Include="frmlogin.cs">
       <SubType>Form</SubType>
@@ -81,90 +70,103 @@
     <Compile Include="frmlogin.Designer.cs">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="menuprincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="menuprincipal.Designer.cs">
-      <DependentUpon>menuprincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nuevoempleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nuevoempleado.Designer.cs">
-      <DependentUpon>nuevoempleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nuevoequipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nuevoequipo.Designer.cs">
-      <DependentUpon>nuevoequipo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NuevoJugador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NuevoJugador.Designer.cs">
-      <DependentUpon>NuevoJugador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NuevoPartido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NuevoPartido.Designer.cs">
-      <DependentUpon>NuevoPartido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmrecContrasena.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmrecContrasena.Designer.cs">
       <DependentUpon>frmrecContrasena.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInscJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInscJugador.Designer.cs">
+      <DependentUpon>frmInscJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmnuevacategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnuevacategoria.Designer.cs">
+      <DependentUpon>frmnuevacategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmnuevocampeonato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnuevocampeonato.Designer.cs">
+      <DependentUpon>frmnuevocampeonato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmmenuprincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmmenuprincipal.Designer.cs">
+      <DependentUpon>frmmenuprincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmnuevoempleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnuevoempleado.Designer.cs">
+      <DependentUpon>frmnuevoempleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmnuevoequipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnuevoequipo.Designer.cs">
+      <DependentUpon>frmnuevoequipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmnuevojugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnuevojugador.Designer.cs">
+      <DependentUpon>frmnuevojugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoPartido.Designer.cs">
+      <DependentUpon>frmNuevoPartido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsInscripcion.resx">
       <DependentUpon>ConsInscripcion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InscJugador.resx">
-      <DependentUpon>InscJugador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nuevocampeonato.resx">
-      <DependentUpon>nuevocampeonato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menuprincipal.resx">
-      <DependentUpon>menuprincipal.cs</DependentUpon>
+    <EmbeddedResource Include="frmrecContrasena.resx">
+      <DependentUpon>frmrecContrasena.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nuevoempleado.resx">
-      <DependentUpon>nuevoempleado.cs</DependentUpon>
+    <EmbeddedResource Include="frmInscJugador.resx">
+      <DependentUpon>frmInscJugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nuevoequipo.resx">
-      <DependentUpon>nuevoequipo.cs</DependentUpon>
+    <EmbeddedResource Include="frmnuevacategoria.resx">
+      <DependentUpon>frmnuevacategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoJugador.resx">
-      <DependentUpon>NuevoJugador.cs</DependentUpon>
+    <EmbeddedResource Include="frmnuevocampeonato.resx">
+      <DependentUpon>frmnuevocampeonato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoPartido.resx">
-      <DependentUpon>NuevoPartido.cs</DependentUpon>
+    <EmbeddedResource Include="frmmenuprincipal.resx">
+      <DependentUpon>frmmenuprincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmnuevoempleado.resx">
+      <DependentUpon>frmnuevoempleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmnuevoequipo.resx">
+      <DependentUpon>frmnuevoequipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmnuevojugador.resx">
+      <DependentUpon>frmnuevojugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoPartido.resx">
+      <DependentUpon>frmNuevoPartido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmrecContrasena.resx">
-      <DependentUpon>frmrecContrasena.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="campeonatoDataSet.xsc">
-      <DependentUpon>campeonatoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="campeonatoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>campeonatoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="campeonatoDataSet.xss">
-      <DependentUpon>campeonatoDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -227,6 +229,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="media\icons\fondo4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

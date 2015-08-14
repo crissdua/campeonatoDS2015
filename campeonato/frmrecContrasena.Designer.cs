@@ -34,11 +34,11 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Nom_usuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnaceptar = new System.Windows.Forms.Button();
-            this.txB_respuesta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txB_Pregunta = new System.Windows.Forms.Label();
+            this.lblPregunta = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtRespuesta = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -89,14 +89,7 @@
             this.btnaceptar.TabIndex = 11;
             this.btnaceptar.Text = "Aceptar";
             this.btnaceptar.UseVisualStyleBackColor = true;
-            this.btnaceptar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txB_respuesta
-            // 
-            this.txB_respuesta.Location = new System.Drawing.Point(63, 77);
-            this.txB_respuesta.Name = "txB_respuesta";
-            this.txB_respuesta.Size = new System.Drawing.Size(283, 20);
-            this.txB_respuesta.TabIndex = 10;
+            this.btnaceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label3
             // 
@@ -107,16 +100,16 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Respuesta:";
             // 
-            // txB_Pregunta
+            // lblPregunta
             // 
-            this.txB_Pregunta.AutoSize = true;
-            this.txB_Pregunta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_Pregunta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txB_Pregunta.Location = new System.Drawing.Point(96, 38);
-            this.txB_Pregunta.Name = "txB_Pregunta";
-            this.txB_Pregunta.Size = new System.Drawing.Size(42, 15);
-            this.txB_Pregunta.TabIndex = 8;
-            this.txB_Pregunta.Text = "label2";
+            this.lblPregunta.AutoSize = true;
+            this.lblPregunta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPregunta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblPregunta.Location = new System.Drawing.Point(96, 38);
+            this.lblPregunta.Name = "lblPregunta";
+            this.lblPregunta.Size = new System.Drawing.Size(42, 15);
+            this.lblPregunta.TabIndex = 8;
+            this.lblPregunta.Text = "label2";
             // 
             // label1
             // 
@@ -140,23 +133,30 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.Location = new System.Drawing.Point(81, 77);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(279, 20);
+            this.txtRespuesta.TabIndex = 14;
+            // 
             // frmreccontrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(430, 171);
+            this.Controls.Add(this.txtRespuesta);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnaceptar);
-            this.Controls.Add(this.txB_respuesta);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txB_Pregunta);
+            this.Controls.Add(this.lblPregunta);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Name = "frmreccontrasena";
             this.Text = "Recuperar Contraseña";
-            this.Load += new System.EventHandler(this.rec_contrasena_Load);
+            this.Load += new System.EventHandler(this.frmrecContrasena);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -172,10 +172,10 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel Nom_usuario;
         private System.Windows.Forms.Button btnaceptar;
-        private System.Windows.Forms.TextBox txB_respuesta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label txB_Pregunta;
+        private System.Windows.Forms.Label lblPregunta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtRespuesta;
     }
 }

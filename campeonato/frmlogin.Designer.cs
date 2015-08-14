@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
-            this.btnrecuperar = new System.Windows.Forms.Button();
             this.btnloguin = new System.Windows.Forms.Button();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -39,20 +38,9 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnrecupera = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnrecuperar
-            // 
-            this.btnrecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnrecuperar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrecuperar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnrecuperar.Location = new System.Drawing.Point(299, 220);
-            this.btnrecuperar.Name = "btnrecuperar";
-            this.btnrecuperar.Size = new System.Drawing.Size(110, 29);
-            this.btnrecuperar.TabIndex = 18;
-            this.btnrecuperar.Text = "Recuperar";
-            this.btnrecuperar.UseVisualStyleBackColor = true;
             // 
             // btnloguin
             // 
@@ -114,7 +102,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(278, 196);
+            this.label1.Location = new System.Drawing.Point(219, 201);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 15);
             this.label1.TabIndex = 22;
@@ -149,17 +137,31 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Inicio de Sesion";
             // 
+            // btnrecupera
+            // 
+            this.btnrecupera.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnrecupera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrecupera.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrecupera.ForeColor = System.Drawing.Color.White;
+            this.btnrecupera.Location = new System.Drawing.Point(239, 219);
+            this.btnrecupera.Name = "btnrecupera";
+            this.btnrecupera.Size = new System.Drawing.Size(110, 30);
+            this.btnrecupera.TabIndex = 25;
+            this.btnrecupera.Text = "Recuperar";
+            this.btnrecupera.UseVisualStyleBackColor = false;
+            this.btnrecupera.Click += new System.EventHandler(this.btnrecupera_Click);
+            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(534, 261);
+            this.Controls.Add(this.btnrecupera);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.btnrecuperar);
             this.Controls.Add(this.btnloguin);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtNombre);
@@ -187,6 +189,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnrecupera;
 
     }
 }
