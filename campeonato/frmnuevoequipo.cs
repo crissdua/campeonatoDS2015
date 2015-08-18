@@ -22,24 +22,19 @@ namespace campeonato
         {
             InitializeComponent();
         }
-        private MySqlDataAdapter sqlCmd;
-        private MySqlCommand sqlConsulta;
-        private MySqlConnection sqlConexion = new MySqlConnection();
-        private String sCadena;
+
 //Funcion para la carga de grid
         void fncCargaGrid()
         {
             try
             {
-                string sConexion = "server = localhost; username = root; password = 12345; database = campeonato";
-                MySqlConnection sqlConexion = new MySqlConnection();
-                sqlConexion.ConnectionString = sConexion;
-                sqlConexion.Open();
-                MySqlDataAdapter SQL_da = new MySqlDataAdapter("Select * from maequipo", sqlConexion);
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlData = new MySqlDataAdapter("Select * from maequipo", cConectar.SqlConexion);
                 DataTable DT_dat = new DataTable();
-                SQL_da.Fill(DT_dat);
+                cConectar.sqlData.Fill(DT_dat);
                 this.dgvEquipo.DataSource = DT_dat;
-                sqlConexion.Close();
+                cConectar.SqlConexion.Close();
             }
             catch
             {
@@ -60,13 +55,14 @@ namespace campeonato
                 }
                 else
                 {
-                    sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-                    sqlConexion.ConnectionString = sCadena;
-                    sqlConexion.Open();
-                    sqlConsulta = new MySqlCommand("INSERT INTO maequipo (vnombreequipo) VALUES ('" + txtNombre.Text + "')", sqlConexion);
-                    sqlConsulta.ExecuteNonQuery();
-                    sqlConexion.Close();
+                    dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                    cConectar.cLocal();
+                    cConectar.sqlCmd = new MySqlCommand("INSERT INTO maequipo (vnombreequipo,vdescripcion) VALUES ('" + txtNombre.Text + "','" + txtDescripcion.Text + "')", cConectar.SqlConexion);
+                    cConectar.sqlCmd.ExecuteNonQuery();
+                    cConectar.SqlConexion.Close();
                     fncCargaGrid();
+                    MessageBox.Show("Datos Insertados");
+                    limpiar();
 
                 }
 
@@ -74,7 +70,7 @@ namespace campeonato
 
             catch
             {
-                MessageBox.Show("Problema al cargar BD");  
+                MessageBox.Show("Problema en BD");  
             }
             
 
@@ -91,19 +87,27 @@ namespace campeonato
                 }
                 else
                 {
-                    sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-                    sqlConexion.ConnectionString = sCadena;
-                    sqlConexion.Open();
-                    //-------------------------------------------------------------------------------------------------
-                    sqlConsulta = new MySqlCommand("UPDATE maequipo SET vnombreequipo='" + txtNombre.Text + "' WHERE ncodequipo ='" + txtId.Text + "'", this.sqlConexion);
-                    sqlConsulta.ExecuteNonQuery();
-                    sqlConexion.Close();
+                    if (MessageBox.Show("¿Está seguro Modificar este registro? Nombre del Empleado: " + txtNombre.Text, "Modificar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                    dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                    cConectar.cLocal();
+                    cConectar.sqlCmd = new MySqlCommand("UPDATE maequipo SET vnombreequipo='" + txtNombre.Text + "', vdescripcion='" + txtDescripcion.Text + "' WHERE ncodequipo ='" + txtId.Text + "'", cConectar.SqlConexion);
+                    cConectar.sqlCmd.ExecuteNonQuery();
+                    cConectar.SqlConexion.Close();
                     fncCargaGrid();
+                    MessageBox.Show("Registro Modificado");
+                    limpiar();
+                    }
+                    else
+                    {
+                        limpiar();
+                    }
                 }
             }
+
             catch
             {
-                MessageBox.Show("Problema al cargar BD");
+                MessageBox.Show("Problema en BD");
             }
         }
 
@@ -118,30 +122,58 @@ namespace campeonato
             {
                 txtNombre.Text = dgvEquipo[1, dgvEquipo.CurrentCell.RowIndex].Value.ToString();
                 txtId.Text = dgvEquipo[0, dgvEquipo.CurrentCell.RowIndex].Value.ToString();
+                txtDescripcion.Text = dgvEquipo[2, dgvEquipo.CurrentCell.RowIndex].Value.ToString();
             }
             catch
             {
                 MessageBox.Show("Problema al cargar BD");
             }
         }
+        //Limpia datos
+        private void limpiar()
+        {
+            txtId.Clear();
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+        }
 //Elimina datos de BD
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                    sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-                    sqlConexion.ConnectionString = sCadena;
-                    sqlConexion.Open();
-                    sqlConsulta = new MySqlCommand("DELETE FROM maequipo WHERE vnombreequipo ='" + txtNombre.Text + "'", sqlConexion);
-                    sqlConsulta.ExecuteNonQuery();
-                    sqlConexion.Close();
-                    fncCargaGrid();
-                
+                if (MessageBox.Show("¿Está seguro de Eliminar este registro? Nombre del Empleado: " + txtNombre.Text, "Eliminar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlCmd = new MySqlCommand("DELETE FROM maequipo WHERE vnombreequipo ='" + txtNombre.Text + "'", cConectar.SqlConexion);
+                cConectar.sqlCmd.ExecuteNonQuery();
+                cConectar.SqlConexion.Close();
+                fncCargaGrid();
+                MessageBox.Show("Registro Eliminado");
+                limpiar();
+                }
+                else
+                {
+                    limpiar();
+                }
             }
+
             catch
             {
-                MessageBox.Show("Problema al cargar BD");
+                MessageBox.Show("Problema en BD");
             }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlData = new MySqlDataAdapter("Select * from maequipo where ndpijugador like ('" + txtNombre.Text + "%') ", cConectar.SqlConexion);
+
+            DataTable DT_dat = new DataTable();
+            cConectar.sqlData.Fill(DT_dat);
+            this.dgvEquipo.DataSource = DT_dat;
+            cConectar.SqlConexion.Close();
         }
 
     }

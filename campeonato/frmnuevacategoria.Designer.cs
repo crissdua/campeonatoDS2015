@@ -160,7 +160,7 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // nuevacategoria
+            // frmnuevacategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,7 +175,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "nuevacategoria";
+            this.Name = "frmnuevacategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "nuevacategoria";
             this.ResumeLayout(false);
             this.PerformLayout();

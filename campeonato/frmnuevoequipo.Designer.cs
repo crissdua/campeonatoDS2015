@@ -40,6 +40,8 @@
             this.dgvEquipo = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maequipoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipo)).BeginInit();
@@ -48,7 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 88);
+            this.label1.Location = new System.Drawing.Point(51, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 0;
@@ -56,10 +58,11 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(179, 81);
+            this.txtNombre.Location = new System.Drawing.Point(179, 38);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(252, 20);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // groupBox2
             // 
@@ -122,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 110);
+            this.label2.Location = new System.Drawing.Point(51, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 4;
@@ -131,17 +134,35 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(179, 107);
+            this.txtId.Location = new System.Drawing.Point(179, 2);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(252, 20);
             this.txtId.TabIndex = 5;
             this.txtId.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(51, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Descripcion:";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(179, 70);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(252, 67);
+            this.txtDescripcion.TabIndex = 7;
+            // 
             // frmnuevoequipo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvEquipo);
@@ -152,6 +173,7 @@
             this.Name = "frmnuevoequipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "nuevoequipo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.nuevoequipo_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.maequipoBindingSource)).EndInit();
@@ -175,5 +197,7 @@
         private System.Windows.Forms.DataGridView dgvEquipo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }

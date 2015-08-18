@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnuevojugador));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxSexo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodEquipo = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSexo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxSexo);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtCodEquipo);
@@ -71,7 +72,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSexo);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.txtApellido);
@@ -84,6 +84,14 @@
             this.groupBox1.Size = new System.Drawing.Size(460, 233);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // cbxSexo
+            // 
+            this.cbxSexo.FormattingEnabled = true;
+            this.cbxSexo.Location = new System.Drawing.Point(203, 122);
+            this.cbxSexo.Name = "cbxSexo";
+            this.cbxSexo.Size = new System.Drawing.Size(124, 21);
+            this.cbxSexo.TabIndex = 20;
             // 
             // label7
             // 
@@ -161,13 +169,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Telefono:";
             // 
-            // txtSexo
-            // 
-            this.txtSexo.Location = new System.Drawing.Point(203, 123);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(124, 20);
-            this.txtSexo.TabIndex = 11;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -204,6 +205,7 @@
             this.txtDpi.Name = "txtDpi";
             this.txtDpi.Size = new System.Drawing.Size(124, 20);
             this.txtDpi.TabIndex = 6;
+            this.txtDpi.TextChanged += new System.EventHandler(this.txtDpi_TextChanged);
             // 
             // label2
             // 
@@ -273,6 +275,7 @@
             // majugadorBindingSource
             // 
             this.majugadorBindingSource.DataMember = "majugador";
+            // 
             // dgvJugadores
             // 
             this.dgvJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -282,19 +285,19 @@
             this.dgvJugadores.TabIndex = 2;
             this.dgvJugadores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJugadores_CellContentClick);
             // 
-            // NuevoJugador
+            // frmnuevojugador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(484, 542);
             this.Controls.Add(this.dgvJugadores);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "NuevoJugador";
+            this.Name = "frmnuevojugador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoJugador";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.NuevoJugador_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -320,7 +323,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtDireccion;
@@ -333,5 +335,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCodEquipo;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbxSexo;
     }
 }

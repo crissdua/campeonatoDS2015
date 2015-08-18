@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace campeonato
 {
-    public partial class frmInscJugador : Form
+    public partial class frmInscripaCampeonato : Form
     {
-        public frmInscJugador()
+        public frmInscripaCampeonato()
         {
             InitializeComponent();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmInscJugador_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

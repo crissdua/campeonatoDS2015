@@ -34,6 +34,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxSexo = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDpi = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.cboxTipo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtFechanacimiento = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -106,6 +106,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxSexo);
             this.groupBox2.Controls.Add(this.txtDireccion);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtDpi);
@@ -113,7 +114,6 @@
             this.groupBox2.Controls.Add(this.cboxTipo);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.txtSexo);
             this.groupBox2.Controls.Add(this.txtFechanacimiento);
             this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.txtNombre);
@@ -128,9 +128,17 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // cbxSexo
+            // 
+            this.cbxSexo.FormattingEnabled = true;
+            this.cbxSexo.Location = new System.Drawing.Point(79, 96);
+            this.cbxSexo.Name = "cbxSexo";
+            this.cbxSexo.Size = new System.Drawing.Size(102, 21);
+            this.cbxSexo.TabIndex = 16;
+            // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(81, 123);
+            this.txtDireccion.Location = new System.Drawing.Point(79, 123);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 15;
@@ -150,6 +158,7 @@
             this.txtDpi.Name = "txtDpi";
             this.txtDpi.Size = new System.Drawing.Size(100, 20);
             this.txtDpi.TabIndex = 13;
+            this.txtDpi.TextChanged += new System.EventHandler(this.txtDpi_TextChanged);
             // 
             // label7
             // 
@@ -189,13 +198,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 10;
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.Location = new System.Drawing.Point(79, 97);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(100, 20);
-            this.txtSexo.TabIndex = 9;
             // 
             // txtFechanacimiento
             // 
@@ -281,19 +283,19 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Codigo Empleado:";
             // 
-            // nuevoempleado
+            // frmnuevoempleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dgvEmpleado);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "nuevoempleado";
+            this.Name = "frmnuevoempleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Empleado";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.nuevoempleado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -314,7 +316,6 @@
         private System.Windows.Forms.DataGridView dgvEmpleado;
         private System.Windows.Forms.ComboBox cboxTipo;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.TextBox txtFechanacimiento;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
@@ -329,5 +330,6 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbxSexo;
     }
 }

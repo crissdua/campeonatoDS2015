@@ -17,9 +17,7 @@ namespace campeonato
         {
             InitializeComponent();
         }
-        private MySqlDataAdapter sqlCmd;
-        private MySqlConnection sqlConexion = new MySqlConnection();
-        private String sCadena;
+
         public static String sUsuario;
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -29,20 +27,19 @@ namespace campeonato
             }
             else
             {
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            sqlConexion.ConnectionString = sCadena;
-            sqlConexion.Open();
-            sqlCmd = new MySqlDataAdapter("Select vrespuesta from mausuario WHERE usuario='" + frmlogin.sNombre + "'", sqlConexion);
-            DataTable DT_hq = new DataTable();
-            sqlCmd.Fill(DT_hq);
-            if (DT_hq.Rows[0][0].ToString() != txtRespuesta.Text )
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlData = new MySqlDataAdapter("Select vrespuesta from mausuario WHERE usuario='" + frmlogin.sNombre + "'", cConectar.SqlConexion);
+                DataTable DT_dat = new DataTable();
+                cConectar.sqlData.Fill(DT_dat);
+            if (DT_dat.Rows[0][0].ToString() != txtRespuesta.Text )
             {
                 Notificacion.mostrarVentana("Error", "Respuesta Incorrecta", Notificacion.Imagen.Error, 5);
-                sqlConexion.Close();
+                cConectar.SqlConexion.Close();
             }
             else
-            {   
-                sqlConexion.Close();
+            {
+                cConectar.SqlConexion.Close();
                 fncRecuperarpass();
                 this.Hide();
             }
@@ -51,32 +48,24 @@ namespace campeonato
 
         private void frmrecContrasena(object sender, EventArgs e)
         {
-            fncConsultarrespuesta();
-        }
-        private void fncConsultarrespuesta()
-        {
-            Nom_usuario.Text = frmlogin.sNombre;
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            sqlConexion.ConnectionString = sCadena;
-            sqlConexion.Open();
-            sqlCmd = new MySqlDataAdapter("Select vpregunta from mausuario WHERE usuario='" + frmlogin.sNombre + "'", sqlConexion);
-            DataTable DT_hq = new DataTable();
-            sqlCmd.Fill(DT_hq);
-            lblPregunta.Text = DT_hq.Rows[0][0].ToString();
-            sqlConexion.Close();
-
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlData = new MySqlDataAdapter("Select vpregunta from mausuario WHERE usuario='" + frmlogin.sNombre + "'", cConectar.SqlConexion);
+            DataTable DT_dat = new DataTable();
+            cConectar.sqlData.Fill(DT_dat);
+            lblPregunta.Text = DT_dat.Rows[0][0].ToString();
+            cConectar.SqlConexion.Close();
         }
 
         private void fncRecuperarpass()
         {
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            sqlConexion.ConnectionString = sCadena;
-            sqlConexion.Open();
-            sqlCmd = new MySqlDataAdapter("Select vpassword  from mausuario WHERE usuario='" + frmlogin.sNombre + "'", sqlConexion);
-            DataTable DT_hq = new DataTable();
-            sqlCmd.Fill(DT_hq);
-            sqlConexion.Close();
-            Notificacion.mostrarVentana("Aceptado", "Respuesta Correcta\n Tú Password es: " + DT_hq.Rows[0][0].ToString(), Notificacion.Imagen.Llave, 5);
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlData = new MySqlDataAdapter("Select vpassword  from mausuario WHERE usuario='" + frmlogin.sNombre + "'", cConectar.SqlConexion);
+            DataTable DT_dat = new DataTable();
+            cConectar.sqlData.Fill(DT_dat);
+            cConectar.SqlConexion.Close();
+            Notificacion.mostrarVentana("Aceptado", "Respuesta Correcta\n Tú Password es: " + DT_dat.Rows[0][0].ToString(), Notificacion.Imagen.Llave, 5);
 
 
         }

@@ -25,30 +25,35 @@ namespace campeonato
         private void campeonatoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevoempleado frmnempleado = new frmnuevoempleado();
+            frmnempleado.MdiParent = this;
             frmnempleado.Show();
         }
 
         private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevojugador frmnjugador = new frmnuevojugador();
+            frmnjugador.MdiParent = this;
             frmnjugador.Show();
         }
 
         private void equipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevoequipo frmnequipo = new frmnuevoequipo();
+            frmnequipo.MdiParent = this;
             frmnequipo.Show();
         }
 
         private void jugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevocampeonato frmncampeonato = new frmnuevocampeonato();
+            frmncampeonato.MdiParent = this;
             frmncampeonato.Show();
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevoempleado frmnempleado = new frmnuevoempleado();
+            frmnempleado.MdiParent = this;
             frmnempleado.Show();
 
 
@@ -57,30 +62,35 @@ namespace campeonato
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevojugador frmnjugador = new frmnuevojugador();
+            frmnjugador.MdiParent = this;
             frmnjugador.Show();
         }
 
         private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevoequipo frmnequipo = new frmnuevoequipo();
+            frmnequipo.MdiParent = this;
             frmnequipo.Show();
         }
 
         private void campeonatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmnuevocampeonato frmncampeonato = new frmnuevocampeonato();
+            frmncampeonato.MdiParent = this;
             frmncampeonato.Show();
         }
 
         private void inscripcionDeJugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInscJugador frmnInscJugador = new frmInscJugador();
+            frmnInscJugador.MdiParent = this;
             frmnInscJugador.Show();
         }
 
         private void inscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsInscripcion frmnConsInscripcion = new ConsInscripcion();
+            frmnConsInscripcion.MdiParent = this;
             frmnConsInscripcion.Show();
         }
 
@@ -98,6 +108,17 @@ namespace campeonato
         {
             frmNuevoPartido frmnNuevoPartido = new frmNuevoPartido();
             frmnNuevoPartido.Show();
+        }
+
+        private void inscripciónDeEquiposACampeonatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInscripaCampeonato frmInscripaCampeonato = new frmInscripaCampeonato();
+            frmInscripaCampeonato.Show();
+        }
+
+        private void frmmenuprincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

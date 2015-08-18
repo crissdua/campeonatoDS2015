@@ -37,6 +37,7 @@
             this.campeonatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionDeJugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripciónDeEquiposACampeonatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.partidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPartidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,7 +116,8 @@
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inscripcionDeJugadoresToolStripMenuItem});
+            this.inscripcionDeJugadoresToolStripMenuItem,
+            this.inscripciónDeEquiposACampeonatosToolStripMenuItem});
             this.procesosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("procesosToolStripMenuItem.Image")));
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(82, 51);
@@ -124,9 +126,16 @@
             // inscripcionDeJugadoresToolStripMenuItem
             // 
             this.inscripcionDeJugadoresToolStripMenuItem.Name = "inscripcionDeJugadoresToolStripMenuItem";
-            this.inscripcionDeJugadoresToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.inscripcionDeJugadoresToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.inscripcionDeJugadoresToolStripMenuItem.Text = "Inscripcion de Jugadores";
             this.inscripcionDeJugadoresToolStripMenuItem.Click += new System.EventHandler(this.inscripcionDeJugadoresToolStripMenuItem_Click);
+            // 
+            // inscripciónDeEquiposACampeonatosToolStripMenuItem
+            // 
+            this.inscripciónDeEquiposACampeonatosToolStripMenuItem.Name = "inscripciónDeEquiposACampeonatosToolStripMenuItem";
+            this.inscripciónDeEquiposACampeonatosToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
+            this.inscripciónDeEquiposACampeonatosToolStripMenuItem.Text = "Inscripción de Equipos a Campeonatos";
+            this.inscripciónDeEquiposACampeonatosToolStripMenuItem.Click += new System.EventHandler(this.inscripciónDeEquiposACampeonatosToolStripMenuItem_Click);
             // 
             // partidoToolStripMenuItem
             // 
@@ -223,11 +232,13 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmmenuprincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmmenuprincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -255,6 +266,7 @@
         private System.Windows.Forms.ToolStripMenuItem respaldarBaseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restaurarBaseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentasDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscripciónDeEquiposACampeonatosToolStripMenuItem;
 
     }
 }

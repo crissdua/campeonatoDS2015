@@ -76,3 +76,95 @@ C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision
 C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision\campeonato\bin\Debug\campeonato.pdb
 C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision\campeonato\bin\Debug\csNotificaciones.dll
 C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision\campeonato\obj\Debug\campeonato.frmCategorias.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe.config
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\bin\Debug\csNotificaciones.dll
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csprojResolveAssemblyReference.cache
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmCategorias.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.ConsInscripcion.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmlogin.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmreccontrasena.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmInscJugador.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevacategoria.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevocampeonato.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmmenuprincipal.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoempleado.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoequipo.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevojugador.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmNuevoPartido.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.Properties.Resources.resources
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csproj.GenerateResource.Cache
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\bin\Debug\dll_conexion.dll
+C:\Users\Cristhiam\Desktop\Proyecto Campeonato Versiones\campeonato 2da revision - 14_08\campeonato\bin\Debug\dll_conexion.pdb
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe.config
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.exe
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.pdb
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csprojResolveAssemblyReference.cache
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmCategorias.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.ConsInscripcion.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmlogin.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmreccontrasena.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmInscJugador.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevacategoria.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevocampeonato.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmmenuprincipal.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoempleado.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoequipo.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevojugador.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmNuevoPartido.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.Properties.Resources.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csproj.GenerateResource.Cache
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.pdb
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\bin\Debug\csNotificaciones.dll
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\bin\Debug\dll_conexion.pdb
+C:\Users\DennysIvan\Desktop\Nuev\Cris\1\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmInscripaCampeonato.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe.config
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.pdb
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\bin\Debug\csNotificaciones.dll
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\bin\Debug\dll_conexion.pdb
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csprojResolveAssemblyReference.cache
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmCategorias.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.ConsInscripcion.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmInscripaCampeonato.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmlogin.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmreccontrasena.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmInscJugador.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevacategoria.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevocampeonato.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmmenuprincipal.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoempleado.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoequipo.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevojugador.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmNuevoPartido.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.Properties.Resources.resources
+C:\Users\Cristhiam\Desktop\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csproj.GenerateResource.Cache
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe.config
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.exe
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.pdb
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.exe
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\bin\Debug\campeonato.pdb
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\bin\Debug\csNotificaciones.dll
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\bin\Debug\dll_conexion.pdb
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csprojResolveAssemblyReference.cache
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmCategorias.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.ConsInscripcion.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmInscripaCampeonato.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmlogin.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmreccontrasena.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmInscJugador.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevacategoria.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevocampeonato.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmmenuprincipal.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoempleado.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevoequipo.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmnuevojugador.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.frmNuevoPartido.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.Properties.Resources.resources
+C:\Users\DennysIvan\Desktop\Nuev\Cris\2\campeonato 2da revision - 14_08\campeonato\obj\Debug\campeonato.csproj.GenerateResource.Cache
