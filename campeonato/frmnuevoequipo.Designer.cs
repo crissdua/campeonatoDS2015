@@ -59,10 +59,12 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(179, 38);
+            this.txtNombre.MaxLength = 15;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(252, 20);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // groupBox2
             // 
@@ -135,10 +137,12 @@
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(179, 2);
+            this.txtId.MaxLength = 8;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(252, 20);
             this.txtId.TabIndex = 5;
             this.txtId.Visible = false;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // label3
             // 
@@ -152,6 +156,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(179, 70);
+            this.txtDescripcion.MaxLength = 300;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(252, 67);

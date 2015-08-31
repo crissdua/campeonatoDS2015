@@ -184,6 +184,76 @@ namespace campeonato
         private void cbxSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDpi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != (char)8)
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyz " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyz " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtFechanacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890abcdefghijklmnñopqrstuvwxyz/ " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "123456789abcdefghijklmnñopqrstuvwxyz,.-" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890, " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
         }    
     }
 }

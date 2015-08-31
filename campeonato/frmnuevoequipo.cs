@@ -176,5 +176,28 @@ namespace campeonato
             cConectar.SqlConexion.Close();
         }
 
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != (char)8)
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890abcdefghijklmnñopqrstuvwxyz " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+
+        }
+
     }
 }

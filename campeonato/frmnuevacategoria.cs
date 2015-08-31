@@ -200,5 +200,17 @@ namespace campeonato
             btnGuardar.Enabled = true;
         }
 
+        private void txtNombreCampeonato_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "123456789abcdefghijklmnñopqrstuvwxyz-" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
     }
 }

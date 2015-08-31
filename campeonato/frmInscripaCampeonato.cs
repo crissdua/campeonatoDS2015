@@ -22,7 +22,7 @@ namespace campeonato
         {
             fncCargacmb1();
             fncCargacmb2();
-            fncCargagrid();
+            //  fncCargagrid();
             //InitializeDataGridView();
 
         }
@@ -30,29 +30,31 @@ namespace campeonato
 
         private void fncCargagrid()
         {
-     
 
-           try
+
+            try
             {
                 dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
                 cConectar.cLocal();
-                cConectar.sqlData = new MySqlDataAdapter("Select * from trequipoencompetencia", cConectar.SqlConexion);
+                //cConectar.sqlData = new MySqlDataAdapter("SELECT *FROM trequipoencompetencia WHERE MaCOMPETENCIA_ncodcompetencia1 = "+ lblCodigoCompetencia.Text +";", cConectar.SqlConexion);
+                cConectar.sqlData = new MySqlDataAdapter("Select vnombreequipo from maequipo where ncodequipo in ( SELECT MaEQUIPO_ncodequipo FROM trequipoencompetencia WHERE MaCOMPETENCIA_ncodcompetencia1 = " + lblCodigoCompetencia.Text + ");", cConectar.SqlConexion);
                 DataTable DT_dat = new DataTable();
                 cConectar.sqlData.Fill(DT_dat);
                 this.dgvCampeonato.DataSource = DT_dat;
-                this.dgvCampeonato.Columns[1].Name = "True";
+
 
                 cConectar.SqlConexion.Close();
             }
             catch
             {
-                MessageBox.Show("Problema en BD, Equipo en competencia");
+                MessageBox.Show("Problema en BD, Equipo en competencia GRID");
             }
 
         }
 
         private void fncCargacmb1()
         {
+
             try
             {
                 dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
@@ -66,7 +68,7 @@ namespace campeonato
                 }
                 cmbCompetencia.DataSource = DT_box;
                 cmbCompetencia.DisplayMember = "vnomcompetencia";
-              
+
                 cConectar.SqlConexion.Close();
             }
 
@@ -81,7 +83,7 @@ namespace campeonato
         {
             try
             {
-                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();                
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
                 cConectar.cLocal();
                 cConectar.sqlData = new MySqlDataAdapter("Select * from maequipo", cConectar.SqlConexion);
                 DataTable DT_box = new DataTable();
@@ -105,6 +107,7 @@ namespace campeonato
 
         private void cmbCompetencia_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             try
             {
                 dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
@@ -112,9 +115,11 @@ namespace campeonato
                 cConectar.sqlCmd = new MySqlCommand("SELECT ncodcompetencia FROM macompetencia WHERE vnomcompetencia = '" + cmbCompetencia.Text + "';", cConectar.SqlConexion);
                 MySqlDataReader MyReader3;
                 MyReader3 = cConectar.sqlCmd.ExecuteReader();
+
                 while (MyReader3.Read())
                 {
-                    lblCodigoCompetencia.Text = MyReader3.GetInt32(0).ToString();                   
+                    lblCodigoCompetencia.Text = MyReader3.GetInt32(0).ToString();
+                    fncCargagrid();
                 }
                 cConectar.SqlConexion.Close();
             }
@@ -123,70 +128,62 @@ namespace campeonato
             {
                 MessageBox.Show("Problema en BD");
             }
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            //cConectar.cLocal();
             try
             {
-                if (MessageBox.Show("¿Está seguro de inscribir a " + cmbEquipo.Text + "Al siguiente campeonato: " + cmbCompetencia.Text + " ", "Confirmación de Inscripción", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("¿Está seguro de inscribir a " + cmbEquipo.Text + "  Al siguiente campeonato: " + cmbCompetencia.Text + " ", "Confirmación de Inscripción", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
                     cConectar.cLocal();
-    /*
-
-                    try
-                    {
-                     //Si el equipo no está inscrito
-
-                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT MaEQUIPO_ncodequipo FROM trequipoencompetencia WHERE MaEQUIPO_ncodequipo = " + lblCodigoEquipo.Text + ";", cConectar.SqlConexion);
+                    MySqlCommand cmd = new MySqlCommand("select *from trequipoencompetencia where MaCOMPETENCIA_ncodcompetencia1 = '" + lblCodigoCompetencia.Text + "' and MaEQUIPO_ncodequipo = '" + lblCodigoEquipo.Text + "';", cConectar.SqlConexion);
                     MySqlDataReader MyReader3;
-                    //Codigo para hacer consulta antes <.-
-                    MyReader3 = sqlCmd1.ExecuteReader();
-                        while (MyReader3.Read())
+                    MyReader3 = cmd.ExecuteReader();
+                    if (!MyReader3.HasRows)
+                    {
+                        cConectar.SqlConexion.Close();
+                        try
                         {
-                            lblComparacion.Text = MyReader3.GetInt32(0).ToString();
-                            if (Convert.ToInt32(lblComparacion.Text) != 0)
+                            cConectar.cLocal();
+                            cConectar.sqlCmd = new MySqlCommand("INSERT INTO trequipoencompetencia (njjugados, njganados, njperdidos, njempatados, ngolfavor, ngolcontra, npts, MaCOMPETENCIA_ncodcompetencia1, MaEQUIPO_ncodequipo) VALUES (0, 0, 0, 0, 0, 0, 0, " + lblCodigoCompetencia.Text + "," + lblCodigoEquipo.Text + ");", cConectar.SqlConexion);
+                            MySqlDataReader MyReader1;
+                            MyReader1 = cConectar.sqlCmd.ExecuteReader();
+                            MessageBox.Show("Equipo inscrito exitosamente");
+                            fncCargagrid();
+                            while (MyReader1.Read())
                             {
-                                MessageBox.Show("El equipo ya ha sido ingreasdo");
                             }
-                            else
-                            {
-                                MessageBox.Show("Puede proseguir");
-
-                            }
+                            cConectar.SqlConexion.Close();
 
                         }
-                    cConectar.SqlConexion.Close();
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        cConectar.SqlConexion.Close();
+                        MessageBox.Show("El equipo ya está inscrito");
+                    }
 
-
-                    }//FIN DEL TRY DE VERIFICACION DE EQUIPO INSCRITO 
-                        
-                    catch
-                    { 
-                        //SI EL EQUIPO NO ESTÁ INSCRITO
-                        MessageBox.Show("Error en en la estructura");
-                    
-                    }*/
-                    
-                    cConectar.sqlCmd = new MySqlCommand("INSERT INTO trequipoencompetencia (njjugados, njganados, njperdidos, njempatados, ngolfavor, ngolcontra, npts, MaCOMPETENCIA_ncodcompetencia1, MaEQUIPO_ncodequipo) VALUES (0, 0, 0, 0, 0, 0, 0, " + lblCodigoCompetencia.Text + ", " + lblCodigoEquipo.Text + ");", cConectar.SqlConexion);
-                    MySqlDataReader MyReader2;
-                    MyReader2 = cConectar.sqlCmd.ExecuteReader();
-                    MessageBox.Show("Datos Insertados");
-                    cConectar.SqlConexion.Close();
-                    fncCargagrid();
                 }
                 else
                 {
-
+                    MessageBox.Show("Error en el mensaje de verificación");
                 }
             }
+
             catch
             {
-                MessageBox.Show("Error en BD, Inserción no realizada");
-            } 
-
-
+                MessageBox.Show("Problema en BD");
+            }
 
         }
 
@@ -201,7 +198,7 @@ namespace campeonato
                 MyReader3 = cConectar.sqlCmd.ExecuteReader();
                 while (MyReader3.Read())
                 {
-                  lblCodigoEquipo.Text = MyReader3.GetInt32(0).ToString();
+                    lblCodigoEquipo.Text = MyReader3.GetInt32(0).ToString();
                 }
                 cConectar.SqlConexion.Close();
             }

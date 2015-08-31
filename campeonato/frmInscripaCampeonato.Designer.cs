@@ -32,14 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblComparacion = new System.Windows.Forms.Label();
             this.lblCodigoEquipo = new System.Windows.Forms.Label();
             this.lblCodigoCompetencia = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbEquipo = new System.Windows.Forms.ComboBox();
             this.cmbCompetencia = new System.Windows.Forms.ComboBox();
             this.dgvCampeonato = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblComparacion = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCampeonato)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +90,15 @@
             this.groupBox1.Text = "Inscripción";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // lblComparacion
+            // 
+            this.lblComparacion.AutoSize = true;
+            this.lblComparacion.Location = new System.Drawing.Point(473, 122);
+            this.lblComparacion.Name = "lblComparacion";
+            this.lblComparacion.Size = new System.Drawing.Size(35, 13);
+            this.lblComparacion.TabIndex = 8;
+            this.lblComparacion.Text = "label4";
+            // 
             // lblCodigoEquipo
             // 
             this.lblCodigoEquipo.AutoSize = true;
@@ -121,6 +129,7 @@
             // 
             // cmbEquipo
             // 
+            this.cmbEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEquipo.FormattingEnabled = true;
             this.cmbEquipo.Location = new System.Drawing.Point(240, 89);
             this.cmbEquipo.Name = "cmbEquipo";
@@ -130,6 +139,7 @@
             // 
             // cmbCompetencia
             // 
+            this.cmbCompetencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCompetencia.FormattingEnabled = true;
             this.cmbCompetencia.Location = new System.Drawing.Point(240, 43);
             this.cmbCompetencia.Name = "cmbCompetencia";
@@ -141,34 +151,18 @@
             // 
             this.dgvCampeonato.AllowUserToAddRows = false;
             this.dgvCampeonato.AllowUserToDeleteRows = false;
-            this.dgvCampeonato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvCampeonato.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCampeonato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCampeonato.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCampeonato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCampeonato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dgvCampeonato.Location = new System.Drawing.Point(12, 198);
+            this.dgvCampeonato.Location = new System.Drawing.Point(229, 198);
             this.dgvCampeonato.Name = "dgvCampeonato";
             this.dgvCampeonato.ReadOnly = true;
-            this.dgvCampeonato.Size = new System.Drawing.Size(776, 159);
+            this.dgvCampeonato.Size = new System.Drawing.Size(363, 159);
             this.dgvCampeonato.TabIndex = 4;
             this.dgvCampeonato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCampeonato_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // lblComparacion
-            // 
-            this.lblComparacion.AutoSize = true;
-            this.lblComparacion.Location = new System.Drawing.Point(473, 122);
-            this.lblComparacion.Name = "lblComparacion";
-            this.lblComparacion.Size = new System.Drawing.Size(35, 13);
-            this.lblComparacion.TabIndex = 8;
-            this.lblComparacion.Text = "label4";
             // 
             // frmInscripaCampeonato
             // 
@@ -206,7 +200,6 @@
         private System.Windows.Forms.DataGridView dgvCampeonato;
         private System.Windows.Forms.Label lblCodigoEquipo;
         private System.Windows.Forms.Label lblCodigoCompetencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label lblComparacion;
     }
 }

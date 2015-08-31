@@ -28,33 +28,9 @@ namespace campeonato
 
         private void frmIniciaPartido_Load(object sender, EventArgs e)
         {
-            try { 
-            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
-            cConectar.cLocal();
-            cConectar.sqlData = new MySqlDataAdapter("Select vnombreequipo, ncodequipo from maequipo", cConectar.SqlConexion);
-            DataTable DT_box = new DataTable();
-            cConectar.sqlData.Fill(DT_box);
-            foreach (DataRow row in DT_box.Rows)
-            {
-                string rowz = row.ItemArray.ToString();
-            }
-            DataTable DT_box2 = new DataTable();
-            cConectar.sqlData.Fill(DT_box2);
-            foreach (DataRow row in DT_box.Rows)
-            {
-                string rowy = row.ItemArray.ToString();
-            }
-            cbxLocal.DataSource = DT_box;
-            cbxVisitante.DataSource = DT_box2;
-            cbxLocal.DisplayMember = "vnombreequipo";
-            cbxVisitante.DisplayMember = "vnombreequipo";
-            cConectar.SqlConexion.Close();
-            }
+            fncCargacmb1();
+            //fncCargaEquipo();
 
-            catch (MySqlException)
-            {
-                MessageBox.Show("Error en BD");
-            }
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -88,6 +64,96 @@ namespace campeonato
             catch (MySqlException)
             {
                 MessageBox.Show("Error en BD");
+            }
+        }
+
+        private void cbxLocal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fncCargaEquipo()
+        {
+            try
+            {
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                // cConectar.sqlData = new MySqlDataAdapter("Select vnombreequipo, ncodequipo from maequipo", cConectar.SqlConexion);
+                cConectar.sqlData = new MySqlDataAdapter("Select vnombreequipo, ncodequipo from maequipo where ncodequipo in (SELECT MaEQUIPO_ncodequipo FROM trequipoencompetencia WHERE MaCOMPETENCIA_ncodcompetencia1 =  '" + lblCompetencia.Text + "' )", cConectar.SqlConexion);
+
+                DataTable DT_box = new DataTable();
+                cConectar.sqlData.Fill(DT_box);
+                foreach (DataRow row in DT_box.Rows)
+                {
+                    string rowz = row.ItemArray.ToString();
+                }
+                DataTable DT_box2 = new DataTable();
+                cConectar.sqlData.Fill(DT_box2);
+                foreach (DataRow row in DT_box.Rows)
+                {
+                    string rowy = row.ItemArray.ToString();
+                }
+                cbxLocal.DataSource = DT_box;
+                cbxVisitante.DataSource = DT_box2;
+                cbxLocal.DisplayMember = "vnombreequipo";
+                cbxVisitante.DisplayMember = "vnombreequipo";
+                cConectar.SqlConexion.Close();
+            }
+
+            catch (MySqlException)
+            {
+                MessageBox.Show("Error en BD");
+            }
+        }
+        private void fncCargacmb1()
+        {
+            try
+            {
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlData = new MySqlDataAdapter("Select * from macompetencia", cConectar.SqlConexion);
+                DataTable DT_box = new DataTable();
+                cConectar.sqlData.Fill(DT_box);
+                foreach (DataRow row in DT_box.Rows)
+                {
+                    string rowz = row.ItemArray.ToString();
+                }
+                cbmCampeonato.DataSource = DT_box;
+                cbmCampeonato.DisplayMember = "vnomcompetencia";
+
+                cConectar.SqlConexion.Close();
+            }
+
+            catch
+            {
+                MessageBox.Show("Problema en BD, Competencia");
+            }
+
+        }
+
+
+        private void cbmCampeonato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlCmd = new MySqlCommand("SELECT ncodcompetencia FROM macompetencia WHERE vnomcompetencia = '" + cbmCampeonato.Text + "';", cConectar.SqlConexion);
+                MySqlDataReader MyReader3;
+                MyReader3 = cConectar.sqlCmd.ExecuteReader();
+                while (MyReader3.Read())
+                {
+                    lblCompetencia.Text = MyReader3.GetInt32(0).ToString();
+                }
+                
+                cConectar.SqlConexion.Close();
+                fncCargaEquipo();
+            }
+
+            catch
+            {
+                MessageBox.Show("Problema en BD");
             }
         }
     }

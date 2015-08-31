@@ -86,9 +86,11 @@
             // txtNombreCampeonato
             // 
             this.txtNombreCampeonato.Location = new System.Drawing.Point(169, 312);
+            this.txtNombreCampeonato.MaxLength = 20;
             this.txtNombreCampeonato.Name = "txtNombreCampeonato";
             this.txtNombreCampeonato.Size = new System.Drawing.Size(268, 20);
             this.txtNombreCampeonato.TabIndex = 4;
+            this.txtNombreCampeonato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCampeonato_KeyPress);
             // 
             // lstEdad
             // 
@@ -127,6 +129,7 @@
             // 
             // cmbGenero
             // 
+            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
             "Masculino",
@@ -139,6 +142,7 @@
             // txtObervaciones
             // 
             this.txtObervaciones.Location = new System.Drawing.Point(169, 403);
+            this.txtObervaciones.MaxLength = 300;
             this.txtObervaciones.Multiline = true;
             this.txtObervaciones.Name = "txtObervaciones";
             this.txtObervaciones.Size = new System.Drawing.Size(268, 71);

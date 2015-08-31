@@ -130,6 +130,7 @@
             // 
             // cbxSexo
             // 
+            this.cbxSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSexo.FormattingEnabled = true;
             this.cbxSexo.Location = new System.Drawing.Point(79, 110);
             this.cbxSexo.Name = "cbxSexo";
@@ -140,9 +141,11 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(79, 137);
+            this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 15;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // label8
             // 
@@ -156,10 +159,12 @@
             // txtDpi
             // 
             this.txtDpi.Location = new System.Drawing.Point(79, 11);
+            this.txtDpi.MaxLength = 13;
             this.txtDpi.Name = "txtDpi";
             this.txtDpi.Size = new System.Drawing.Size(100, 20);
             this.txtDpi.TabIndex = 13;
             this.txtDpi.TextChanged += new System.EventHandler(this.txtDpi_TextChanged);
+            this.txtDpi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDpi_KeyPress);
             // 
             // label7
             // 
@@ -196,30 +201,38 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(79, 164);
+            this.txtTelefono.MaxLength = 41;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 10;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtFechanacimiento
             // 
             this.txtFechanacimiento.Location = new System.Drawing.Point(79, 85);
+            this.txtFechanacimiento.MaxLength = 20;
             this.txtFechanacimiento.Name = "txtFechanacimiento";
             this.txtFechanacimiento.Size = new System.Drawing.Size(100, 20);
             this.txtFechanacimiento.TabIndex = 8;
+            this.txtFechanacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFechanacimiento_KeyPress);
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(79, 59);
+            this.txtApellido.MaxLength = 100;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 7;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(79, 33);
+            this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 6;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label6
             // 
