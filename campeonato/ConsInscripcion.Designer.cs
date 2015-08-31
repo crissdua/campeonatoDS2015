@@ -88,7 +88,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ConsInscripcion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsInscripcion";
             this.Load += new System.EventHandler(this.ConsInscripcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

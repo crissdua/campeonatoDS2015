@@ -17,10 +17,7 @@ namespace campeonato
 {
     public partial class frmnuevojugador : Form
     {
-        private MySqlDataAdapter sqlCmd;
-        private MySqlCommand sqlConsulta;
-        private MySqlConnection sqlConexion = new MySqlConnection();
-        private String sCadena;
+
         public frmnuevojugador()
         {
             InitializeComponent();
@@ -28,32 +25,45 @@ namespace campeonato
 
         private void fncCargagrid()
     {
-        string sConexion = "server = localhost; username = root; password = 12345; database = campeonato";
-        MySqlConnection SQL_conexion = new MySqlConnection();
-        SQL_conexion.ConnectionString = sConexion;
-        SQL_conexion.Open();
-        MySqlDataAdapter SQL_da = new MySqlDataAdapter("Select * from majugador", SQL_conexion);
+        try {
+        dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+        cConectar.cLocal();
+        cConectar.sqlData = new MySqlDataAdapter("Select * from majugador", cConectar.SqlConexion);
         DataTable DT_dat = new DataTable();
-        SQL_da.Fill(DT_dat);
+        cConectar.sqlData.Fill(DT_dat);
         this.dgvJugadores.DataSource = DT_dat;
-        SQL_conexion.Close();
+        cConectar.SqlConexion.Close();
+        }
+
+        catch
+        {
+            MessageBox.Show("Problema en BD");
+        }
     }
 
         private void NuevoJugador_Load(object sender, EventArgs e)
         {
             fncCargagrid();
-
+            cbxSexo.Items.Add("Masculino");
+            cbxSexo.Items.Add("Femenino");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            sqlConexion.ConnectionString = sCadena;
-            sqlConexion.Open();
-            sqlConsulta = new MySqlCommand("INSERT INTO majugador (ndpijugador,vnombrejugador,vapejugador,nfechanacimiento,vsexojugador,vdireccionjugador,vtelefonojugador,MaEQUIPO_ncodequipo) VALUES ('" + txtDpi.Text + "','" + txtNombre.Text + "','" + txtApellido.Text + "','" + txtEdad.Text + "','" + txtSexo.Text + "','" + txtDireccion.Text + "','" + txtTelefono.Text + "','" + txtCodEquipo.Text + "')", sqlConexion);
-            sqlConsulta.ExecuteNonQuery();
-            sqlConexion.Close();
+            try {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlCmd = new MySqlCommand("INSERT INTO majugador (ndpijugador,vnombrejugador,vapejugador,nfechanacimiento,vsexojugador,vdireccionjugador,vtelefonojugador,MaEQUIPO_ncodequipo) VALUES ('" + txtDpi.Text + "','" + txtNombre.Text + "','" + txtApellido.Text + "','" + txtEdad.Text + "','" + cbxSexo.Text + "','" + txtDireccion.Text + "','" + txtTelefono.Text + "','" + txtCodEquipo.Text + "')", cConectar.SqlConexion);
+            cConectar.sqlCmd.ExecuteNonQuery();
+            cConectar.SqlConexion.Close();
+            MessageBox.Show("Datos Insertados");
             fncCargagrid();
+            }
+
+            catch
+            {
+                MessageBox.Show("Problema en BD");
+            }
         }
 
         private void dgvJugadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -63,7 +73,7 @@ namespace campeonato
             txtNombre.Text = dgvJugadores[2, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
             txtApellido.Text = dgvJugadores[3, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
             txtEdad.Text = dgvJugadores[4, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
-            txtSexo.Text = dgvJugadores[5, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
+            cbxSexo.Text = dgvJugadores[5, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
             txtDireccion.Text = dgvJugadores[6, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
             txtTelefono.Text = dgvJugadores[7, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
             txtCodEquipo.Text = dgvJugadores[8, dgvJugadores.CurrentCell.RowIndex].Value.ToString();
@@ -73,37 +83,83 @@ namespace campeonato
         {
             try
             {
-                sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-                sqlConexion.ConnectionString = sCadena;
-                sqlConexion.Open();
-                sqlConsulta = new MySqlCommand("DELETE FROM majugador WHERE ncodjugador ='" + label7.Text + "'", sqlConexion);
-                sqlConsulta.ExecuteNonQuery();
-                sqlConexion.Close();
-                txtDpi.Clear();
-                txtNombre.Clear();
-                txtApellido.Clear();
-                txtEdad.Clear();
-                txtSexo.Clear();
-                txtDireccion.Clear();
-                txtTelefono.Clear();
-                txtCodEquipo.Clear();
+                if (MessageBox.Show("¿Está seguro de Eliminar este registro? Nombre del Empleado: " + txtNombre.Text, "Eliminar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlCmd = new MySqlCommand("DELETE FROM majugador WHERE ncodjugador ='" + label7.Text + "'", cConectar.SqlConexion);
+                cConectar.sqlCmd.ExecuteNonQuery();
+                cConectar.SqlConexion.Close();
                 fncCargagrid();
+                MessageBox.Show("Registro Eliminado");
+                limpiar();
+                }
+                else
+                {
+                    limpiar();
+                }
             }
-            catch (MySqlException ep)
+
+            catch
             {
+                MessageBox.Show("Problema en BD");
             }
         }
 
+        private void limpiar()
+        {
+            txtDpi.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtEdad.Clear();
+            cbxSexo.Text = "";
+            txtDireccion.Clear();
+            txtTelefono.Clear();
+            txtCodEquipo.Clear();
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            sqlConexion.ConnectionString = sCadena;
-            sqlConexion.Open();
-            sqlConsulta = new MySqlCommand("UPDATE majugador SET ndpijugador ='" + txtDpi.Text + "', vnombrejugador='" + txtNombre.Text + "',vapejugador='" + txtApellido.Text + "',nfechanacimiento='" + txtEdad.Text + "',vsexojugador='" + txtSexo.Text + "',vdireccionjugador='" + txtDireccion.Text + "',vtelefonojugador='" + txtTelefono.Text + "',MaEQUIPO_ncodequipo='" + txtCodEquipo.Text + "' WHERE ncodjugador ='" + label7.Text + "'", this.sqlConexion);
-            sqlConsulta.ExecuteNonQuery();
-            sqlConexion.Close();
+            try { 
+            if (MessageBox.Show("¿Está seguro Modificar este registro? Nombre del Empleado: " + txtNombre.Text, "Modificar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlCmd = new MySqlCommand("UPDATE majugador SET ndpijugador ='" + txtDpi.Text + "', vnombrejugador='" + txtNombre.Text + "',vapejugador='" + txtApellido.Text + "',nfechanacimiento='" + txtEdad.Text + "',vsexojugador='" + cbxSexo.Text + "',vdireccionjugador='" + txtDireccion.Text + "',vtelefonojugador='" + txtTelefono.Text + "',MaEQUIPO_ncodequipo='" + txtCodEquipo.Text + "' WHERE ncodjugador ='" + label7.Text + "'", cConectar.SqlConexion);
+            cConectar.sqlCmd.ExecuteNonQuery();
+            cConectar.SqlConexion.Close();
             fncCargagrid();
+            MessageBox.Show("Registro Modificado");
+            limpiar();
+                    }
+            else
+            {
+                limpiar();
+            }
+            }
+
+            catch
+            {
+                MessageBox.Show("Problema en BD");
+            }
         }
+
+        private void txtDpi_TextChanged(object sender, EventArgs e)
+        {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlData = new MySqlDataAdapter("Select * from majugador where ndpijugador like ('" + txtDpi.Text + "%') ", cConectar.SqlConexion);
+
+            DataTable DT_dat = new DataTable();
+            cConectar.sqlData.Fill(DT_dat);
+            this.dgvJugadores.DataSource = DT_dat;
+            cConectar.SqlConexion.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

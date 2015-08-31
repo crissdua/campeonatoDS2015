@@ -133,20 +133,20 @@ namespace campeonato
                 {
                     dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
                     cConectar.cLocal();
-    
+    /*
 
                     try
                     {
                      //Si el equipo no está inscrito
 
-                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT MaEQUIPO_ncodequipo FROM trequipoencompetencia WHERE MaCOMPETENCIA_ncodcompetencia1= " + lblCodigoEquipo.Text + ";", cConectar.SqlConexion);
+                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT MaEQUIPO_ncodequipo FROM trequipoencompetencia WHERE MaEQUIPO_ncodequipo = " + lblCodigoEquipo.Text + ";", cConectar.SqlConexion);
                     MySqlDataReader MyReader3;
                     //Codigo para hacer consulta antes <.-
                     MyReader3 = sqlCmd1.ExecuteReader();
                         while (MyReader3.Read())
                         {
                             lblComparacion.Text = MyReader3.GetInt32(0).ToString();
-                          /*  if (Convert.ToInt32(lblComparacion.Text) != 0)
+                            if (Convert.ToInt32(lblComparacion.Text) != 0)
                             {
                                 MessageBox.Show("El equipo ya ha sido ingreasdo");
                             }
@@ -154,7 +154,7 @@ namespace campeonato
                             {
                                 MessageBox.Show("Puede proseguir");
 
-                            }*/
+                            }
 
                         }
                     cConectar.SqlConexion.Close();
@@ -167,16 +167,14 @@ namespace campeonato
                         //SI EL EQUIPO NO ESTÁ INSCRITO
                         MessageBox.Show("Error en en la estructura");
                     
-                    }
+                    }*/
                     
-                    /*
                     cConectar.sqlCmd = new MySqlCommand("INSERT INTO trequipoencompetencia (njjugados, njganados, njperdidos, njempatados, ngolfavor, ngolcontra, npts, MaCOMPETENCIA_ncodcompetencia1, MaEQUIPO_ncodequipo) VALUES (0, 0, 0, 0, 0, 0, 0, " + lblCodigoCompetencia.Text + ", " + lblCodigoEquipo.Text + ");", cConectar.SqlConexion);
                     MySqlDataReader MyReader2;
                     MyReader2 = cConectar.sqlCmd.ExecuteReader();
                     MessageBox.Show("Datos Insertados");
                     cConectar.SqlConexion.Close();
                     fncCargagrid();
-                     * */
                 }
                 else
                 {

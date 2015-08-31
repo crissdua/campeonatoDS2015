@@ -1,0 +1,43 @@
+SELECT
+
+dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlData = new MySqlDataAdapter(
+
+INSERT
+
+dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlCmd = new MySqlCommand(
+
+CONFIRMACION
+
+if (MessageBox.Show("¿Está seguro de Eliminar este registro? Nombre del Empleado: " + txtNombre.Text, "Eliminar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+// aca va la progra
+ MessageBox.Show("Registro Eliminado");
+                limpiar();
+            }
+            else
+            {
+                limpiar();
+            }
+
+
+if (MessageBox.Show("¿Está seguro Modificar este registro? Nombre del Empleado: " + txtNombre.Text, "Modificar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                    MessageBox.Show("Registro Modificado");
+                    limpiar();
+                    }
+                    else
+                    {
+                        limpiar();
+                    }
+
+
+            }
+
+            catch
+            {
+                MessageBox.Show("Problema en BD");
+            }

@@ -20,18 +20,10 @@ namespace campeonato
         public frmlogin()
         {InitializeComponent();}
 
-        private MySqlCommand sqlCmd;
-        private MySqlConnection SqlConexion = new MySqlConnection();
-        private String sCadena;
-        public static String sNombre;
-
-//Clase Conexion, inicia la conexion a BD campeonato
-        private void clasConexion()
-        {
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            SqlConexion.ConnectionString = sCadena;
-            SqlConexion.Open();
-        }
+// Variables
+        public static string sNombre;
+        public static String sUsuario;
+        public static String sPrivilegio;
 
 // btnloguin conexion y logueo de usuario
         private void btnloguin_Click(object sender, EventArgs e)
@@ -49,23 +41,24 @@ namespace campeonato
                     }
                     else
                     {
-                        clasConexion();
-                        sqlCmd = new MySqlCommand("Select usuario from mausuario WHERE usuario='" + txtNombre.Text + "'And vpassword ='" + txtContrasena.Text + "'", SqlConexion);
-
-                        Object obj = sqlCmd.ExecuteScalar();
+                        dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                        cConectar.cLocal();
+                        cConectar.sqlCmd = new MySqlCommand("Select usuario, vprivilegio from mausuario WHERE usuario='" + txtNombre.Text + "'And vpassword ='" + txtContrasena.Text + "'", cConectar.SqlConexion);
+                        Object obj = cConectar.sqlCmd.ExecuteScalar();
                         if (obj == null)
                         {
                             Notificacion.mostrarVentana("Login", "Error: Ingrese un usuario y contraseña validos", Notificacion.Imagen.Error, 5);
                             txtNombre.Text = "";
                             txtContrasena.Text = "";
-                            SqlConexion.Close();
+                            cConectar.SqlConexion.Close();
                         }
                         else
                         {
                             sNombre = txtNombre.Text;
                             Notificacion.mostrarVentana("Loguin", "Inicio de Sesion Correcto ", Notificacion.Imagen.Llave, 5);
-                            SqlConexion.Close();
+                            cConectar.SqlConexion.Close();
                             this.Hide();
+                            fncTomaPrivilegio();
                             frmmenuprincipal frmnmenu = new frmmenuprincipal();
                             frmnmenu.Show();
                         }
@@ -75,6 +68,18 @@ namespace campeonato
             { 
                 MessageBox.Show("Problema con la BD"); 
             }
+        }
+
+        public void fncTomaPrivilegio()
+        {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlData = new MySqlDataAdapter("Select  usuario, vprivilegio from mausuario where usuario ='" + txtNombre.Text + "'", cConectar.SqlConexion);
+            DataTable DT_dat = new DataTable();
+            cConectar.sqlData.Fill(DT_dat);
+            cConectar.SqlConexion.Close();
+            sUsuario = DT_dat.Rows[0][0].ToString();
+            sPrivilegio = DT_dat.Rows[0][1].ToString();
         }
 //btnrecuperar recupera password del usuario
         private void btnrecupera_Click(object sender, EventArgs e)
@@ -87,9 +92,10 @@ namespace campeonato
                 }
                     else
                     {
-                        clasConexion();
-                        sqlCmd = new MySqlCommand("Select usuario from mausuario WHERE usuario='" + txtNombre.Text + "'", SqlConexion);
-                        Object obj = sqlCmd.ExecuteScalar();
+                        dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                        cConectar.cLocal();
+                        cConectar.sqlCmd = new MySqlCommand("Select usuario from mausuario WHERE usuario='" + txtNombre.Text + "'", cConectar.SqlConexion);
+                        Object obj = cConectar.sqlCmd.ExecuteScalar();
                         if (obj == null)
                         {
                             Notificacion.mostrarVentana("Error", "Usuario NO EXISTE!!!", Notificacion.Imagen.Error, 5);
@@ -100,7 +106,7 @@ namespace campeonato
                             sNombre = txtNombre.Text;
                             F_ventanaP.Show();
                         }
-                        SqlConexion.Close();
+                        cConectar.SqlConexion.Close();
                     }
             }
             catch

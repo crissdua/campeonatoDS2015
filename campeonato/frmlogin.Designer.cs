@@ -52,7 +52,7 @@
             this.btnloguin.Name = "btnloguin";
             this.btnloguin.Size = new System.Drawing.Size(110, 50);
             this.btnloguin.TabIndex = 14;
-            this.btnloguin.Text = "Loguin";
+            this.btnloguin.Text = "Login";
             this.btnloguin.UseVisualStyleBackColor = false;
             this.btnloguin.Click += new System.EventHandler(this.btnloguin_Click);
             // 
@@ -167,6 +167,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lbl_pasword);
             this.Controls.Add(this.lbl_usuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmlogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

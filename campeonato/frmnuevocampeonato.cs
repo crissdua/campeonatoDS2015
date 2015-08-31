@@ -224,7 +224,7 @@ namespace campeonato
         {
             dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
             cConectar.cLocal();
-            cConectar.sqlData = new MySqlDataAdapter("Select * from macompetencia where ndpijugador like ('" + txtNombre.Text + "%') ", cConectar.SqlConexion);
+            cConectar.sqlData = new MySqlDataAdapter("Select * from macompetencia where vnomcompetencia like ('" + txtNombre.Text + "%') ", cConectar.SqlConexion);
 
             DataTable DT_dat = new DataTable();
             cConectar.sqlData.Fill(DT_dat);

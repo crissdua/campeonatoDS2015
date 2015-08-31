@@ -21,35 +21,45 @@ namespace campeonato
         {
             InitializeComponent();
         }
-        private MySqlDataAdapter sqlCmd;
-        private MySqlCommand sqlConsulta;
-        private MySqlConnection sqlConexion = new MySqlConnection();
-        private String sCadena;
 //Carga o actualiza grid
-        void clasCargagrid()
+        void fncCargagrid()
         {
             try
             {
-                string S_Cconn = "server = localhost; username = root; password = 12345; database = campeonato";
-
-                MySqlConnection SQL_conexion = new MySqlConnection();
-                SQL_conexion.ConnectionString = S_Cconn;
-                SQL_conexion.Open();
-                MySqlDataAdapter sqlData = new MySqlDataAdapter("Select * from madatopersonal", SQL_conexion);
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlData = new MySqlDataAdapter("Select * from madatopersonal", cConectar.SqlConexion);
                 DataTable DT_dat = new DataTable();
-                sqlData.Fill(DT_dat);
+                cConectar.sqlData.Fill(DT_dat);
                 this.dgvEmpleado.DataSource = DT_dat;
-                SQL_conexion.Close();
-            }
-            catch (MySqlException ex)
-            { 
+                cConectar.SqlConexion.Close();
+               
+                cConectar.cLocal();
+                cConectar.sqlData = new MySqlDataAdapter("Select * from mapuestopersonal", cConectar.SqlConexion);
+                DataTable DT_box = new DataTable();
+                cConectar.sqlData.Fill(DT_box);
+                foreach (DataRow row in DT_box.Rows)
+                {
+                    string rowz = row.ItemArray.ToString();
+                }
+                cboxTipo.DataSource = DT_box;
+                cboxTipo.DisplayMember = "ncodpuesto";
+                cConectar.SqlConexion.Close();
             }
 
+            catch
+            {
+                MessageBox.Show("Problema en BD");
+            }
+
+        
         }
         
         private void nuevoempleado_Load(object sender, EventArgs e)
         {
-            clasCargagrid();
+            cbxSexo.Items.Add("Masculino");
+            cbxSexo.Items.Add("Femenino");
+            fncCargagrid();
         }
 // Inserta datos en BD
 
@@ -60,23 +70,23 @@ namespace campeonato
                 if (txtNombre.Text == "")
                 {
                     MessageBox.Show("Llene el campo");
-                    clasCargagrid();
+                    fncCargagrid();
                 }
                 else
                 {
-                    sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-                    sqlConexion.ConnectionString = sCadena;
-                    sqlConexion.Open();
-                    sqlConsulta = new MySqlCommand("INSERT INTO madatopersonal (ndpipersonal, vnombrepersonal, vapepersonal, dfechanacimiento, vsexopersonal, vdireccionpersonal, ntelpersonal, MaPUESTOPERSONAL_ncodpuesto) VALUES ('" + txtDpi.Text +"' , '" + txtNombre.Text + "' , '" + txtApellido.Text + "' , '" + txtFechanacimiento.Text + "' , '" + txtSexo.Text + "' , '" + txtDireccion.Text + "' , '" + txtTelefono.Text + "','" + cboxTipo.Text + "')", sqlConexion);
-                    sqlConsulta.ExecuteNonQuery();
-                    sqlConexion.Close();
-                    clasCargagrid();
+                    dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                    cConectar.cLocal();
+                    cConectar.sqlCmd = new MySqlCommand("INSERT INTO madatopersonal (ndpipersonal, vnombrepersonal, vapepersonal, dfechanacimiento, vsexopersonal, vdireccionpersonal, ntelpersonal, MaPUESTOPERSONAL_ncodpuesto) VALUES ('" + txtDpi.Text + "' , '" + txtNombre.Text + "' , '" + txtApellido.Text + "' , '" + txtFechanacimiento.Text + "' , '" + cbxSexo.Text + "' , '" + txtDireccion.Text + "' , '" + txtTelefono.Text + "','" + cboxTipo.Text + "')", cConectar.SqlConexion);
+                    cConectar.sqlCmd.ExecuteNonQuery();
+                    cConectar.SqlConexion.Close();
+                    MessageBox.Show("Datos Insertados");
+                    fncCargagrid();
                 }
             }
 
             catch (MySqlException)
             {
-               
+                MessageBox.Show("Error en BD");
             }
             
 
@@ -84,14 +94,28 @@ namespace campeonato
 // modifica datos en BD
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            sqlConexion.ConnectionString = sCadena;
-            sqlConexion.Open();
-            //-------------------------------------------------------------------------------------------------
-            sqlConsulta = new MySqlCommand("UPDATE madatopersonal SET ndpipersonal='" + txtDpi.Text + "' , vnombrepersonal='" + txtNombre.Text + "', vapepersonal='" + txtApellido.Text + "', dfechanacimiento='" + txtFechanacimiento.Text + "',vsexopersonal='" + txtSexo.Text + "' ,vdireccionpersonal='" + txtDireccion.Text + "' ,ntelpersonal='"+txtTelefono.Text+"' WHERE coddatopersonal ='" + label9.Text + "'", this.sqlConexion);
-            sqlConsulta.ExecuteNonQuery();
-            sqlConexion.Close();
-            clasCargagrid();
+            try { 
+            if (MessageBox.Show("¿Está seguro de Modificar este registro? Nombre del Empleado: " + txtNombre.Text, "Modificar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlCmd = new MySqlCommand("UPDATE madatopersonal SET ndpipersonal='" + txtDpi.Text + "' , vnombrepersonal='" + txtNombre.Text + "', vapepersonal='" + txtApellido.Text + "', dfechanacimiento='" + txtFechanacimiento.Text + "',vsexopersonal='" + cbxSexo.Text + "' ,vdireccionpersonal='" + txtDireccion.Text + "' ,ntelpersonal='" + txtTelefono.Text + "' WHERE coddatopersonal ='" + label9.Text + "'", cConectar.SqlConexion);
+            cConectar.sqlCmd.ExecuteNonQuery();
+            cConectar.SqlConexion.Close();
+            fncCargagrid();
+            MessageBox.Show("Registro Modificado");
+            limpiar();
+            }
+            else
+            {
+                limpiar();
+            }
+            }
+
+            catch
+            {
+                MessageBox.Show("Problema en BD");
+            }
         }
 
         private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,20 +125,65 @@ namespace campeonato
             txtNombre.Text = dgvEmpleado[2, dgvEmpleado.CurrentCell.RowIndex].Value.ToString();
             txtApellido.Text = dgvEmpleado[3, dgvEmpleado.CurrentCell.RowIndex].Value.ToString();
             txtFechanacimiento.Text = dgvEmpleado[4, dgvEmpleado.CurrentCell.RowIndex].Value.ToString();
-            txtSexo.Text = dgvEmpleado[5, dgvEmpleado.CurrentCell.RowIndex].Value.ToString();
+            cbxSexo.Text = dgvEmpleado[5, dgvEmpleado.CurrentCell.RowIndex].Value.ToString();
             txtDireccion.Text = dgvEmpleado[6, dgvEmpleado.CurrentCell.RowIndex].Value.ToString();
             txtTelefono.Text = dgvEmpleado[7, dgvEmpleado.CurrentCell.RowIndex].Value.ToString();
+        }
+        //borra datos de los text
+        private void limpiar()
+        {
+            label9.Text = "";
+            txtDpi.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtFechanacimiento.Clear();
+            cbxSexo.Text = "";
+            txtDireccion.Clear();
+            txtTelefono.Clear();
         }
 // Elimina datos de BD
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            sCadena = "server = localhost; username = root; password = 12345; database = campeonato";
-            sqlConexion.ConnectionString = sCadena;
-            sqlConexion.Open();
-            sqlConsulta = new MySqlCommand("DELETE FROM madatopersonal WHERE coddatopersonal='" + label9.Text + "'" , sqlConexion);
-            sqlConsulta.ExecuteNonQuery();
-            sqlConexion.Close();
-            clasCargagrid();
+            try { 
+            if (MessageBox.Show("¿Está seguro de Eliminar este registro? Nombre del Empleado: " + txtNombre.Text, "Eliminar Registro", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+                cConectar.cLocal();
+                cConectar.sqlCmd = new MySqlCommand("DELETE FROM madatopersonal WHERE coddatopersonal='" + label9.Text + "'", cConectar.SqlConexion);
+                cConectar.sqlCmd.ExecuteNonQuery();
+                cConectar.SqlConexion.Close();
+                fncCargagrid();
+                MessageBox.Show("Registro Eliminado");
+                limpiar();
+            }
+            else
+            {
+                limpiar();
+            }
+            }
+
+            catch
+            {
+                MessageBox.Show("Problema en BD");
+            }
+
+        }
+
+        private void txtDpi_TextChanged(object sender, EventArgs e)
+        {
+            dll_conexion.Conexion cConectar = new dll_conexion.Conexion();
+            cConectar.cLocal();
+            cConectar.sqlData = new MySqlDataAdapter("Select * from madatopersonal where ndpipersonal like ('" + txtDpi.Text + "%') ", cConectar.SqlConexion);
+
+            DataTable DT_dat = new DataTable();
+            cConectar.sqlData.Fill(DT_dat);
+            this.dgvEmpleado.DataSource = DT_dat;
+            cConectar.SqlConexion.Close();
+        }
+
+        private void cbxSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }    
     }
 }
