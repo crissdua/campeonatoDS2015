@@ -29,17 +29,17 @@
             this.macompetenciaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.macompetenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGuarda = new System.Windows.Forms.Button();
             this.bot3 = new System.Windows.Forms.Button();
             this.bot2 = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCategoria1 = new System.Windows.Forms.Label();
             this.botCategoria = new System.Windows.Forms.Button();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.macategoriaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.dateFinal = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,12 +48,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateInicio = new System.Windows.Forms.DateTimePicker();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.macategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.campeonatoDataSet = new campeonato.campeonatoDataSet();
+            this.macategoriaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.macategoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvCampeonato = new System.Windows.Forms.DataGridView();
+            this.macategoriaTableAdapter = new campeonato.campeonatoDataSetTableAdapters.macategoriaTableAdapter();
+            this.lblCodigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.macompetenciaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macompetenciaBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.macategoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campeonatoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macategoriaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macategoriaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCampeonato)).BeginInit();
@@ -69,14 +76,26 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnGuarda);
             this.groupBox2.Controls.Add(this.bot3);
             this.groupBox2.Controls.Add(this.bot2);
-            this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Location = new System.Drawing.Point(559, 147);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(267, 84);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
+            // 
+            // btnGuarda
+            // 
+            this.btnGuarda.Image = ((System.Drawing.Image)(resources.GetObject("btnGuarda.Image")));
+            this.btnGuarda.Location = new System.Drawing.Point(16, 18);
+            this.btnGuarda.Name = "btnGuarda";
+            this.btnGuarda.Size = new System.Drawing.Size(75, 53);
+            this.btnGuarda.TabIndex = 3;
+            this.btnGuarda.Text = "Guardar";
+            this.btnGuarda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuarda.UseVisualStyleBackColor = true;
+            this.btnGuarda.Click += new System.EventHandler(this.btnGuarda_Click);
             // 
             // bot3
             // 
@@ -88,6 +107,7 @@
             this.bot3.Text = "Modificar";
             this.bot3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bot3.UseVisualStyleBackColor = true;
+            this.bot3.Click += new System.EventHandler(this.btnModificar);
             // 
             // bot2
             // 
@@ -99,20 +119,7 @@
             this.bot2.Text = "Eliminar";
             this.bot2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bot2.UseVisualStyleBackColor = true;
-            this.bot2.Click += new System.EventHandler(this.bot2_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(16, 19);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 53);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.bot1_Click);
+            this.bot2.Click += new System.EventHandler(this.btnEliminar);
             // 
             // Nombre
             // 
@@ -134,6 +141,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCategoria1);
             this.groupBox1.Controls.Add(this.botCategoria);
             this.groupBox1.Controls.Add(this.txtCategoria);
             this.groupBox1.Controls.Add(this.txtDescripcion);
@@ -153,6 +161,15 @@
             this.groupBox1.Size = new System.Drawing.Size(517, 268);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // lblCategoria1
+            // 
+            this.lblCategoria1.AutoSize = true;
+            this.lblCategoria1.Location = new System.Drawing.Point(410, 75);
+            this.lblCategoria1.Name = "lblCategoria1";
+            this.lblCategoria1.Size = new System.Drawing.Size(35, 13);
+            this.lblCategoria1.TabIndex = 19;
+            this.lblCategoria1.Text = "label4";
             // 
             // botCategoria
             // 
@@ -182,19 +199,12 @@
             // 
             // cmbCategoria
             // 
-            this.cmbCategoria.DataSource = this.macategoriaBindingSource2;
-            this.cmbCategoria.DisplayMember = "vnombrecategoria";
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(140, 45);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(121, 21);
             this.cmbCategoria.TabIndex = 16;
-            this.cmbCategoria.ValueMember = "vnombrecategoria";
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
-            // 
-            // macategoriaBindingSource2
-            // 
-            this.macategoriaBindingSource2.DataMember = "macategoria";
             // 
             // label6
             // 
@@ -241,6 +251,7 @@
             this.cmbTipoCompetencia.Name = "cmbTipoCompetencia";
             this.cmbTipoCompetencia.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoCompetencia.TabIndex = 10;
+            this.cmbTipoCompetencia.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCompetencia_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -267,6 +278,21 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 6;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // macategoriaBindingSource
+            // 
+            this.macategoriaBindingSource.DataMember = "macategoria";
+            this.macategoriaBindingSource.DataSource = this.campeonatoDataSet;
+            // 
+            // campeonatoDataSet
+            // 
+            this.campeonatoDataSet.DataSetName = "campeonatoDataSet";
+            this.campeonatoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // macategoriaBindingSource2
+            // 
+            this.macategoriaBindingSource2.DataMember = "macategoria";
             // 
             // macategoriaBindingSource1
             // 
@@ -274,20 +300,39 @@
             // 
             // dgvCampeonato
             // 
+            this.dgvCampeonato.AllowUserToAddRows = false;
+            this.dgvCampeonato.AllowUserToDeleteRows = false;
             this.dgvCampeonato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCampeonato.Location = new System.Drawing.Point(36, 312);
             this.dgvCampeonato.Name = "dgvCampeonato";
+            this.dgvCampeonato.ReadOnly = true;
             this.dgvCampeonato.Size = new System.Drawing.Size(776, 193);
             this.dgvCampeonato.TabIndex = 7;
+            this.dgvCampeonato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCampeonato_CellContentClick);
+            // 
+            // macategoriaTableAdapter
+            // 
+            this.macategoriaTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(559, 41);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(35, 13);
+            this.lblCodigo.TabIndex = 8;
+            this.lblCodigo.Text = "label4";
             // 
             // frmnuevocampeonato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 545);
+            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.dgvCampeonato);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmnuevocampeonato";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -298,10 +343,13 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.macategoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campeonatoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macategoriaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macategoriaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCampeonato)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -310,7 +358,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button bot3;
         private System.Windows.Forms.Button bot2;
-        private System.Windows.Forms.Button btnGuardar;
+       // private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -337,5 +385,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maCATEGORIAcodcategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource macategoriaBindingSource2;
         private System.Windows.Forms.DataGridView dgvCampeonato;
+        private campeonatoDataSet campeonatoDataSet;
+        private System.Windows.Forms.BindingSource macategoriaBindingSource;
+        private campeonatoDataSetTableAdapters.macategoriaTableAdapter macategoriaTableAdapter;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Label lblCategoria1;
+        private System.Windows.Forms.Button btnGuarda;
     }
 }
